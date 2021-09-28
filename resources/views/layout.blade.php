@@ -9,7 +9,7 @@
 				<link rel="preconnect" href="https://fonts.googleapis.com">
 				<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 				<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap" rel="stylesheet">
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ cachebust('css/app.css') }}" rel="stylesheet">
     </head>
     <body class="font-sans antialiased py-12 text-black px-4">
 			<header class="flex max-w-3xl mx-auto">
