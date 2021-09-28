@@ -17,7 +17,7 @@
 					<a href="/" class="text-7xl tracking-tight inline-block font-extrabold uppercase">Say It Back</a>
 					<div class="mt-2 text-gray-400 text-3xl uppercase font-bold">A reality dating podcast</div>
 					<p class="mt-6 max-w-lg text-xl">
-						Every Wednesday, hosts <a href="https://www.instagram.com/vana_cristina/" class="underline">Vana</a> & <a href="https://www.instagram.com/itslaurentbtw/" class="underline">Laurent</a> send single men and women on live audio dates where they try to find love (or at least slide in some DMs)
+						Every Wednesday, hosts <a href="https://www.instagram.com/vana_cristina/" target="_blank" class="underline">Vana</a> & <a href="https://www.instagram.com/itslaurentbtw/" target="_blank" class="underline">Laurent</a> send single men and women on live audio dates where they try to find love (or at least slide in some DMs)
 					</p>
 				</div>
 			</header>
