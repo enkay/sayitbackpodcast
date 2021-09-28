@@ -14,10 +14,14 @@
     <body class="font-sans antialiased py-12 text-black px-4">
 			<header class="flex max-w-3xl mx-auto">
 				<div class="mx-auto text-center">
-					<a href="/" class="text-7xl tracking-tight inline-block font-extrabold uppercase">Say It Back</a>
-					<div class="mt-2 text-gray-400 text-3xl uppercase font-bold">A reality dating podcast</div>
-					<p class="mt-6 max-w-lg text-xl">
-						Every Wednesday, hosts <a href="https://www.instagram.com/vana_cristina/" target="_blank" class="underline">Vana</a> & <a href="https://www.instagram.com/itslaurentbtw/" target="_blank" class="underline">Laurent</a> send single men and women on live audio dates where they try to find love (or at least slide in some DMs)
+					<a href="/" class="text-5xl lg:text-7xl tracking-tight inline-block font-extrabold uppercase">
+						Say It Back
+					</a>
+					<div class="mt-2 text-gray-400 text-xl lg:text-3xl uppercase font-bold">
+						A reality dating podcast
+					</div>
+					<p class="mt-6 max-w-full lg:max-w-lg text-lg lg:text-xl">
+						Every Wednesday, hosts <a href="https://www.instagram.com/vana_cristina/" target="_blank" class="underline">Vana</a> & <a href="https://www.instagram.com/itslaurentbtw/" target="_blank" class="underline">Laurent</a> send single men and women on audio dates where they try to find love (or at least slide in someone's DMs)
 					</p>
 				</div>
 			</header>
