@@ -22,7 +22,7 @@
 					</div>
 				</div>
 			</header>
-			<main class="mt-12 max-w-lg mx-auto">
+			<main class="max-w-lg mx-auto">
 				@yield('content')
 			</main>
 			<footer class="max-w-lg mx-auto">
