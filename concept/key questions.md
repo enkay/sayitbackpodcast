@@ -1,0 +1,19 @@
+- Do you kiss on the first date?
+- What's the hardest thing about dating you?
+- Given the choice of anyone in the world, who would you want as a dinner guest?
+- Would you like to be famous? In what way?
+- For what in your life do you feel most grateful?
+- What's the greatest accomplishment of your life so far?
+- What's your love language?
+- Tell your partner something that you like about them already.
+- If you had to get rid of all your material possessions but one, what would you keep?
+- What's the most romantic thing a partner has done for you? (TT)
+- What's in your sock drawer
+- When's the last time you used the oven to bake something that wasn't frozen
+- If you had to move, where would you go? (TT)
+- What dating advice would you give yourself / your younger self?
+- What makes sex great vs good? (TT)
+- How do you calm down after a fight or stressful event? (TT)
+- How could men and women understand each other better?
+- What's your favorite part of coming home after a long trip? (TT)
+- Would you rather never text or never talk on the phone?

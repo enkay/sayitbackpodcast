@@ -1,0 +1,2 @@
+- 1 date per episode (2 contestant and 1 bachelor/bachelorette)
+- 10min ish per episode

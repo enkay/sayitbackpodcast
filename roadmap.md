@@ -1,8 +1,38 @@
 # pages
-- prepare
+- apply
+	- https://bachelornation.com/pages/apply/
+	- hinge and bumble
+	- photo (headshot)
+	- name
+	- gender
+	- interested in
+	- birthday
+	- location
+	- work
+	- height
+	- exercise
+	- drinking
+	- smoking
+	- weed
+	- drugs
+	- kids
+	- religion
+	- education level
+	- ethnicity
+	- body type
+	- instagram
+	- tiktok
+	- facebook
+	- answer match making questions
+	- answer fun questions
+	- why do you want to be on the show
+	- agree to the terms of service
+- start
+	- what to expect
+	- how to prepare
 - home
 	- links to listen to apple, spotify, and others
 	- links to socials
+	- link to apply
 - episodes
 - guests
-- apply

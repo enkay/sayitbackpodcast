@@ -1,0 +1,5 @@
+- 2 guys for 1 girl, 2 girls for 1 guy, make it a bit of a competition, or like house hunter so listeners can pick a favorite... wait until next episode to show who he or she picked?
+- Make it like a dating app they have to sign up for?
+- Make them fill out a form and send them new potential matches to say yes or no to?
+- Participants should "like" each other before the date based on photos / basic info
+- pre-interview everyone to create a profile

@@ -1,0 +1,15 @@
+Build it like a hinge / bumble profile
+- name / age / location
+- profession / schooling
+- sex / height
+- drinks / smokes / weed / drugs
+- photo
+- 3 fun facts / prompts
+	- use bumble / hinge prompts?
+	- tattoos
+	- fears
+	- favorite holiday
+	- sports
+	- notable previous careers
+	- hobbies
+	- favorite drink
