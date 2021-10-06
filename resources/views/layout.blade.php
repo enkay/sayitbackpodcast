@@ -10,14 +10,16 @@
 				<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 				<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap" rel="stylesheet">
         <link href="{{ cachebust('css/app.css') }}" rel="stylesheet">
+
+				@yield('meta')
     </head>
-    <body class="font-sans antialiased py-12 text-black px-4">
+    <body class="px-4 py-12 font-sans antialiased text-black">
 			<header class="flex max-w-lg mx-auto">
 				<div class="mx-auto text-center">
-					<a href="/" class="block mx-auto text-5xl lg:text-7xl tracking-tight font-extrabold uppercase">
+					<a href="/" class="lg:text-7xl block mx-auto text-5xl font-extrabold tracking-tight uppercase">
 						Say It Back
 					</a>
-					<div class="mt-2 text-gray-400 text-xl lg:text-3xl uppercase font-bold">
+					<div class="lg:text-3xl mt-2 text-xl font-bold text-gray-400 uppercase">
 						A reality dating podcast
 					</div>
 				</div>
