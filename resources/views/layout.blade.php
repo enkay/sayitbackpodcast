@@ -11,15 +11,16 @@
 				<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap" rel="stylesheet">
         <link href="{{ cachebust('css/app.css?v=2') }}" rel="stylesheet">
 
+				<link type="application/rss+xml" rel="alternate" title="Say It Back" href="https://anchor.fm/s/6dab07d0/podcast/rss"/>
 				@yield('meta')
     </head>
     <body class="px-4 py-12 font-sans antialiased text-black">
 			<header class="flex max-w-lg mx-auto">
 				<div class="mx-auto text-center">
-					<a href="/" class="block mx-auto text-5xl font-extrabold tracking-tight uppercase lg:text-7xl">
+					<a href="/" class="lg:text-7xl block mx-auto text-5xl font-extrabold tracking-tight uppercase">
 						Say It Back
 					</a>
-					<div class="mt-2 text-xl font-bold text-gray-400 uppercase lg:text-3xl">
+					<div class="lg:text-3xl mt-2 text-xl font-bold text-gray-400 uppercase">
 						A reality dating podcast
 					</div>
 				</div>
