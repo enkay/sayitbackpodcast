@@ -1,6 +1,14 @@
+# done
+logic (40min)
+logic+auphonic
+
+# tbd
 audition
-logic
+- 3:32-3:54
 protools
-garageband+auphonic
+
+# out
+garageband+auphonic (no voice effects)
+hindenberg journalist (no voice effects)
 reaper
-hindenberg journalist
+	- works ok but volumes uneven
