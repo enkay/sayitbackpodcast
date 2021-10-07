@@ -1,0 +1,53 @@
+<template>
+	<svg viewBox="0 0 24 24" :width="size" :height="size" v-html="content" class="stroke-current"></svg>
+</template>
+
+<script>
+export default {
+	props: {
+		icon: String,
+		name: String,
+		size: {
+			type: String,
+			default: "24"
+		}
+	},
+	data () {
+		return {
+			icons: {
+				close: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>',
+				dashboard: '<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M12 4.5A11.336 11.336 0 00.75 15.923V18a1.5 1.5 0 001.5 1.5h19.5a1.5 1.5 0 001.5-1.5v-2.08A11.336 11.336 0 0012 4.5z"/><path d="M9 19.5v-.75a3 3 0 016 0v.75M14.25 9.003L12 15.753M4.875 15.003h0M4.875 15a.375.375 0 10.375.375.375.375 0 00-.375-.375M6.375 11.253h0M6.375 11.253a.375.375 0 10.375.375.375.375 0 00-.375-.375M19.125 15.003h0M19.125 15a.375.375 0 10.375.375.375.375 0 00-.375-.375M17.625 11.253h0M17.625 11.253a.375.375 0 10.375.375.375.375 0 00-.375-.375M9.375 8.253h0M9.375 8.253a.375.375 0 10.375.375.375.375 0 00-.375-.375"/></g>',
+				website: '<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M1.5 2.25h21v19.5h-21zM1.5 6.75h21M9 6.75v15M4.5 9.75H6M4.5 12.75H6M4.5 15.75H6M4.5 18.75H6"/><path d="M12 9.75h7.5v9H12zM12 14.25h7.5M15 14.25v4.5"/></g>',
+				phone: '<path d="M15.04 22.39l.012.007a5.533 5.533 0 006.884-.755l.774-.774a1.846 1.846 0 000-2.609L19.449 15a1.846 1.846 0 00-2.609 0h0a1.843 1.843 0 01-2.608 0L9.014 9.781a1.846 1.846 0 010-2.609h0a1.843 1.843 0 000-2.608L5.754 1.3a1.846 1.846 0 00-2.609 0l-.774.774a5.535 5.535 0 00-.756 6.884l.008.012A49.935 49.935 0 0015.04 22.39z" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>',
+				va: '<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M4.5 18h-.75a3 3 0 01-3-3v-3a3 3 0 013-3h.75a.75.75 0 01.75.75v7.5a.75.75 0 01-.75.75zM20.25 18h-.75a.75.75 0 01-.75-.75v-7.5A.75.75 0 0119.5 9h.75a3 3 0 013 3v3a3 3 0 01-3 3zM3.75 9A8.25 8.25 0 0112 .75h0A8.25 8.25 0 0120.25 9M15 21.75h2.25a3 3 0 003-3h0V18M13.5 23.25H12a1.5 1.5 0 01-1.5-1.5h0a1.5 1.5 0 011.5-1.5h1.5a1.5 1.5 0 011.5 1.5h0a1.5 1.5 0 01-1.5 1.5zM9 15.442a4.454 4.454 0 006 0M9 9.985v1.312M15 9.985v1.312"/></g>',
+				settings: '<g fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.546 2.438a1.957 1.957 0 002.908 0L14.4 1.4a1.958 1.958 0 013.41 1.413l-.071 1.4a1.958 1.958 0 002.051 2.054l1.4-.071a1.959 1.959 0 011.41 3.41l-1.042.94a1.96 1.96 0 000 2.909l1.042.94a1.958 1.958 0 01-1.413 3.41l-1.4-.071a1.958 1.958 0 00-2.056 2.056l.071 1.4A1.959 1.959 0 0114.4 22.6l-.941-1.041a1.96 1.96 0 00-2.908 0L9.606 22.6A1.959 1.959 0 016.2 21.192l.072-1.4a1.958 1.958 0 00-2.056-2.056l-1.4.071A1.957 1.957 0 011.4 14.4l1.041-.94a1.96 1.96 0 000-2.909L1.4 9.606A1.959 1.959 0 012.809 6.2l1.4.071a1.958 1.958 0 002.058-2.06L6.2 2.81A1.959 1.959 0 019.606 1.4l.94 1.038z"/><path d="M12 7.501a4.5 4.5 0 110 9 4.5 4.5 0 010-9z"/></g>',
+				logout: '<g fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M.75 12.004H16.5M12.75 15.754l3.75-3.75-3.75-3.75"/><path d="M3.306 16.6c2.538 5.214 8.822 7.383 14.036 4.845s7.383-8.822 4.845-14.036S13.365.025 8.151 2.564a10.5 10.5 0 00-4.666 4.494"/></g>',
+				invoices: '<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M21.75 21.75a1.5 1.5 0 01-1.5 1.5H3.75a1.5 1.5 0 01-1.5-1.5V2.25a1.5 1.5 0 011.5-1.5h10.629a1.5 1.5 0 011.06.439l5.872 5.872a1.5 1.5 0 01.439 1.06z"/><path d="M21.75 8.25h-6a1.5 1.5 0 01-1.5-1.5v-6M6.2 11.594a2.224 2.224 0 001.858.875c1.139 0 2.063-.693 2.063-1.547S9.2 9.376 8.062 9.376 6 8.683 6 7.828s.924-1.547 2.062-1.547a2.221 2.221 0 011.858.875M8.062 12.469V13.5M8.062 5.25v1.031M12 15h6M6.75 19.5H18"/></g>',
+				subscriptions: '<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M8.25 17.25h-6a1.5 1.5 0 01-1.5-1.5v-12a1.5 1.5 0 011.5-1.5h13.5a1.5 1.5 0 011.5 1.5v4.5M.75 6.75h16.5M5.25 3.75v-3M12.75 3.75v-3M15 18.75h-3.75v3.75M22.667 19.484a5.573 5.573 0 01-10.74-.734M19.5 15.75h3.75V12M11.833 15.017a5.572 5.572 0 0110.74.733"/></g>',
+				checkout: '<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M11.925 3.493h-2.44a1.61 1.61 0 00-.6 3.105l2.476.99a1.61 1.61 0 01-.6 3.1H8.325M10.125 3.493v-.9M10.125 11.593v-.9M4.5 20.968a1.875 1.875 0 103.75 0 1.875 1.875 0 10-3.75 0zM12 20.968a1.875 1.875 0 103.75 0 1.875 1.875 0 10-3.75 0z"/><path d="M.75 7.093l2.329 7.887a1.5 1.5 0 001.45 1.113h10.818A1.5 1.5 0 0016.8 14.98l3.238-12.154a2.249 2.249 0 012.174-1.67h1.038"/></g>',
+				clients: '<g fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8.25 6a2.625 2.625 0 110 5.25 2.625 2.625 0 010-5.25zM3.75 16.5a4.5 4.5 0 019 0h-9zM14.25 9h4.5M14.25 12h6"/><path d="M21.75 3H2.25a1.5 1.5 0 00-1.5 1.5v15a1.5 1.5 0 001.5 1.5h3a1.5 1.5 0 013 0h7.5a1.5 1.5 0 013 0h3a1.5 1.5 0 001.5-1.5v-15a1.5 1.5 0 00-1.5-1.5z"/></g>',
+				campaigns: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M.75 7.5h22.5v15H.75zM2.25 4.5h19.5M4.5 1.5h15M4.5 16.5h3.75M4.5 19.5h8.25"/><path d="M15.75 10.5h4.5V15h-4.5z"/></g></svg>',
+				warning: '<g fill="none" stroke-linecap="round" stroke-width="1.5"><path d="M12 18.75a.375.375 0 10.375.375.375.375 0 00-.375-.375h0" stroke-linejoin="round"/><path d="M12 15.75v-7.5" stroke-miterlimit="10"/><path d="M13.621 1.76a1.806 1.806 0 00-3.242 0L.906 21.058a1.521 1.521 0 001.366 2.192h19.456a1.521 1.521 0 001.366-2.192z" stroke-linejoin="round"/></g>',
+				success: '<g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M6 13.223L8.45 16.7a1.049 1.049 0 001.707.051L18 6.828"/><path d="M.75 11.999a11.25 11.25 0 1022.5 0 11.25 11.25 0 10-22.5 0z"/></g>',
+				menu: '<g transform="matrix(1,0,0,1,0,0)"><path d="M2.25 18.003L21.75 18.003" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path><path d="M2.25 12.003L21.75 12.003" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path><path d="M2.25 6.003L21.75 6.003" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></g>',
+				proposals: '<g transform="matrix(1,0,0,1,0,0)"><path d="M7.5 10.51L16.5 10.51" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path><path d="M7.5 14.26L16.5 14.26" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path><path d="M7.5 18.01L16.5 18.01" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path><path d="M15.75,4.51H19.5A1.5,1.5,0,0,1,21,6.01V21.76a1.5,1.5,0,0,1-1.5,1.5H4.5A1.5,1.5,0,0,1,3,21.76V6.01a1.5,1.5,0,0,1,1.5-1.5H8.25a3.75,3.75,0,0,1,7.5,0Z" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path><path d="M12,3.76a.375.375,0,1,1-.375.375A.375.375,0,0,1,12,3.76" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></g>',
+				files: '<g transform="matrix(1,0,0,1,0,0)"><path d="M15,19.5a.375.375,0,1,0,.375.375A.375.375,0,0,0,15,19.5h0" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path><path d="M15.374,23.251a3.375,3.375,0,0,0,0-6.75H7.124a3.375,3.375,0,0,0,0,6.75Z" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path><path d="M18.489,18.577l-1.971-4.73A3,3,0,0,0,13.749,12h-5A3,3,0,0,0,5.98,13.847l-1.971,4.73" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path><path d="M20.883,15.056A4.873,4.873,0,1,0,15.61,6.865,7.5,7.5,0,1,0,2.683,13.277" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></g>',
+				delete: '<g fill="none"><path  stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></g>',
+				reorder: '<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"/>',
+				'external-link': '<path stroke-linecap="round" fill="none" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>',
+				help: '<g transform="matrix(1,0,0,1,0,0)"><path d="M9,9a3,3,0,1,1,4,2.829,1.5,1.5,0,0,0-1,1.415V14.25" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path><path d="M12,17.25a.375.375,0,1,0,.375.375A.375.375,0,0,0,12,17.25h0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path><path d="M0.750 12.000 A11.250 11.250 0 1 0 23.250 12.000 A11.250 11.250 0 1 0 0.750 12.000 Z" fill="none" stroke="currentColor" stroke-width="1.5"></path></g>,',
+				search: '<path fill="none" stroke="currentColor stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>',
+				more: '<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"/>',
+				less: '<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"/>',
+				star: '<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>',
+				'star-full': '<path fill="currentColor" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>',
+			},
+		}
+	},
+	computed: {
+		content () {
+			return '<title>' + (this.name || this.icon) + '</title>' + this.icons[this.icon]
+		}
+	}
+}
+</script>
