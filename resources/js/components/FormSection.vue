@@ -23,7 +23,7 @@ export default {
 	},
 	computed: {
 		stack () {
-			if (!this.first) return 'pt-8 mt-8 border-t border-grey-300'
+			if (!this.first) return 'pt-8 mt-8 border-t border-gray-300'
 		}
 	}
 }

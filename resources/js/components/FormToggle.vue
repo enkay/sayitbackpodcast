@@ -4,7 +4,7 @@
 			<input type="checkbox" :id="'i-'+name" :checked="modelValue" @input="e => $emit('update:modelValue', e.target.checked)" />
 			<div class="slider"></div>
 		</label>
-		<label class="text-grey-700 ml-4" :for="'i-'+name">{{ label }}</label>
+		<label class="text-gray-700 ml-4" :for="'i-'+name">{{ label }}</label>
 	</div>
 </template>
 
@@ -26,8 +26,8 @@ export default {
 				'bg-color': true,
 				'border-blue-700': true
 			} : {
-				'bg-grey-200': true,
-				'border-grey-300': true
+				'bg-gray-200': true,
+				'border-gray-300': true
 			};
 		}
 	}
@@ -46,7 +46,7 @@ export default {
 		input { display: none; }
 
 		.slider {
-			@apply absolute cursor-pointer inset-0 bg-grey-300;
+			@apply absolute cursor-pointer inset-0 bg-gray-300;
 			-webkit-transition: .4s;
 			transition: .4s;
 	  	border-radius: 40px;

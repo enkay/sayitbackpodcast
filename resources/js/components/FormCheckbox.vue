@@ -1,7 +1,7 @@
 <template>
 	<label
 		:for="'i-'+name" 
-		class="border-grey-300 hover:border-grey-400 flex items-center p-4 border-2 rounded-lg cursor-pointer"
+		class="border-gray-300 hover:border-gray-400 flex items-center p-4 border-2 rounded-lg cursor-pointer"
 	>
 		<div class="checkbox mr-4">
 			<input :id="'i-'+name" type="checkbox" :name="name" :checked="modelValue" @input="e => $emit('update:modelValue', e.target.checked)">
@@ -35,11 +35,11 @@ export default {
 }
 
 .selected {
-	@apply absolute top-0 left-0 h-6 w-6 bg-grey-300 rounded select-none;
+	@apply absolute top-0 left-0 h-6 w-6 bg-gray-300 rounded select-none;
 }
 
 .checkbox:hover input ~ .selected {
-  @apply bg-grey-400;
+  @apply bg-gray-400;
 }
 
 .checkbox input:checked ~ .selected {

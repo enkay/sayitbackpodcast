@@ -22,7 +22,7 @@ export default {
 
 <style lang="scss" scoped>
 	textarea {
-		@apply cursor-default bg-grey-100 appearance-none block p-3 border-2 border-grey-300 outline-none w-full rounded leading-normal text-base shadow-none;
+		@apply cursor-default bg-gray-100 appearance-none block p-3 border-2 border-gray-300 outline-none w-full rounded leading-normal text-base shadow-none;
 	}
 
 	.has-error textarea {

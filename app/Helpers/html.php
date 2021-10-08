@@ -1,6 +1,9 @@
 <?php
 
 // cachebust
+
+use Illuminate\Support\Facades\File;
+
 function cachebust($path) {
 	// if (app()->environment('local')) return mix($path);
 

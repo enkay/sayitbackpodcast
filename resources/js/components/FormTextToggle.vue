@@ -1,6 +1,6 @@
 <template>
 	<div class="form-group relative" :class="{ 'has-error': hasError(name, errors)}">
-		<label class="text-grey-700" :for="'i-'+name">{{ label }}</label>:&nbsp;
+		<label class="text-gray-700" :for="'i-'+name">{{ label }}</label>:&nbsp;
 		<input ref="input" class="absolute hidden" type="checkbox" :id="'i-' + name" :checked="modelValue" :name="name" @input="e => $emit('update:modelValue', e.target.checked)" :key="name">
 		<label :for="'i-'+name" class="link inline-block">{{ value }}</label>
 	</div>

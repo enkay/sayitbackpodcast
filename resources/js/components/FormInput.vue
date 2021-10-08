@@ -28,11 +28,11 @@ export default {
 	computed: {
 		classes () {
 			return {
-				'bg-grey-100': !this.whiteBg,
+				'bg-gray-100': !this.whiteBg,
 				'bg-white': this.whiteBg,
-				'rounded': !this.prefix && !this.suffix,
-				'rounded-r': this.prefix,
-				'rounded-l': this.suffix,
+				'rounded-lg': !this.prefix && !this.suffix,
+				'rounded-r-lg': this.prefix,
+				'rounded-l-lg': this.suffix,
 			}
 		}
 	},
@@ -41,11 +41,11 @@ export default {
 
 <style lang="scss" scoped>
 	input {
-		@apply appearance-none block p-3 border-2 border-grey-300 outline-none w-full leading-normal text-base shadow-none;
+		@apply appearance-none block p-3 border-2 border-gray-300 outline-none w-full leading-normal text-base shadow-none;
 	}
 	
 	input:focus {
-		@apply border-grey-500 bg-blue-100;
+		@apply bg-gray-200 border-gray-400;
 	}
 
 	.has-error input {

@@ -1,13 +1,13 @@
 <template>
 	<div class="form-group" :class="{ 'has-error': hasError(input, errors)}">
-		<label :class="{ 'flex': !folded, 'inline-flex': folded }" class="text-grey-700 items-center" :for="`i-${input}`">
+		<label :class="{ 'flex': !folded, 'inline-flex': folded }" class="items-center text-base text-gray-600" :for="`i-${input}`">
 			{{ label }}
-			<span v-if="optional&&!folded" class="text-grey-500 text-sm"><span class="text-grey-300">&nbsp;/&nbsp;</span>optional</span>
+			<span v-if="optional&&!folded" class="text-sm text-gray-500"><span class="text-gray-300">&nbsp;/&nbsp;</span>optional</span>
 		</label>
 		<div v-show="!folded" :class="{ 'flex': prefix||suffix }" class="mt-2">
-			<span v-if="prefix" class="bg-grey-300 border-grey-300 text-muted px-2 py-3 border-2 rounded-l">{{ prefix }}</span>
+			<span v-if="prefix" class="text-muted px-2 py-3 bg-gray-300 border-2 border-gray-300 rounded-l">{{ prefix }}</span>
 			<slot></slot>
-			<span v-if="suffix" class="bg-grey-300 border-grey-300 text-muted px-2 py-3 border-2 rounded-r">{{ suffix }}</span>
+			<span v-if="suffix" class="text-muted px-2 py-3 bg-gray-300 border-2 border-gray-300 rounded-r">{{ suffix }}</span>
 		</div>
 		<div v-show="folded" class="inline">
 			<span>: </span>

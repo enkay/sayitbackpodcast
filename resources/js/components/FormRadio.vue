@@ -1,7 +1,7 @@
 <template>
 	<label
 		:for="'i-'+value" 
-		:class="{ 'border-color': selected, 'border-grey-300': !selected }" 
+		:class="{ 'border-color': selected, 'border-gray-300': !selected }" 
 		class=" flex items-center p-4 border-2 rounded-lg cursor-pointer"
 	>
 		<div class="radio mr-4">
@@ -36,11 +36,11 @@ export default {
 }
 
 .selected {
-	@apply absolute left-0 top-0 w-6 h-6 rounded-full bg-grey-300;
+	@apply absolute left-0 top-0 w-6 h-6 rounded-full bg-gray-300;
 }
 
 .radio:hover input ~ .selected {
-	@apply bg-grey-400;
+	@apply bg-gray-400;
 }
 
 .radio input:checked ~ .selected {

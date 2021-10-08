@@ -1,5 +1,5 @@
 <template>
-	<div class="border-grey-300 flex pt-8 mt-8 border-t">
+	<div class="border-gray-300 flex pt-8 mt-8 border-t">
 		<div class="w-88 flex-grow-0"></div>
 		<div class="justify-end flex-grow max-w-4xl">
 			<slot></slot>
