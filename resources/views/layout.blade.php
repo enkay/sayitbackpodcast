@@ -13,9 +13,15 @@
 				<link rel="shortcut icon" href="/images/favicon.png" type="image/png" />
 
 				<link type="application/rss+xml" rel="alternate" title="Say It Back" href="https://anchor.fm/s/6dab07d0/podcast/rss"/>
-				@yield('meta')
+				
+				@section('meta')
+					<meta property="og:url" content="{{ url()->current() }}">
+					<meta property="og:title" content="SAY IT BACK PODCAST">
+					<meta property="og:description" content="A Reality Dating Show. Every week, hosts Vana & Laurent send single men and women on phone dates to try and find love (or at least slide in the DMs)">
+					<meta property="og:image" content="{{ asset('/images/say-it-back-meta-preview.png?v=2') }}">
+				@show
     </head>
-    <body class="px-4 py-12 font-sans text-lg antialiased text-black">
+    <body class="px-4 py-8 font-sans text-lg antialiased text-black">
 			<div id="app">
 				@section('header')
 				<header class="flex max-w-lg pb-4 mx-auto border-b border-gray-200">
@@ -23,8 +29,8 @@
 						<a href="/" class="block mx-auto text-4xl font-extrabold tracking-tight uppercase">
 							Say It Back
 						</a>
-						<div class="mt-1 text-sm font-bold text-gray-400 uppercase">
-							A reality dating podcast
+						<div class="mt-0 text-sm font-bold text-black uppercase">
+							A reality dating show
 						</div>
 					</div>
 				</header>

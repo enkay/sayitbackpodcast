@@ -2,7 +2,7 @@
 	<div>
 		<form v-if="!success" @submit.prevent="submit">
 			<FormGroup label="Enter your email below:" :errors="errors" input="email">
-				<FormInput class="mt-2" name="email" v-model="form.email" type="email" placeholder="yourname@gmail.com"></FormInput>
+				<FormInput name="email" v-model="form.email" type="email" placeholder="yourname@gmail.com"></FormInput>
 			</FormGroup>
 			<FormButton type="submit" :loading="loading" class="w-full mt-4">Get Started!</FormButton>
 			<p class="mt-4 text-sm">We'll send you a link to verify your email address. No spam.</p>

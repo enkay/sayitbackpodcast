@@ -51,7 +51,7 @@ export default {
 	}
 	
 	select:focus {
-		@apply border-gray-500 bg-blue-100 outline-none;
+		@apply border-black outline-none;
 	}
 
 	.has-error select {

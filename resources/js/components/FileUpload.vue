@@ -59,7 +59,7 @@ export default {
 		display: block;
 	}
 	.btn-file-addon {
-		@apply text-muted ml-4 text-sm whitespace-nowrap py-2;
+		@apply text-gray-400 ml-4 text-sm whitespace-nowrap py-2;
 		overflow: hidden;
 		text-overflow: ellipsis;
 		flex-shrink: 2;

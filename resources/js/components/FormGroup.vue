@@ -2,7 +2,7 @@
 	<div class="form-group" :class="{ 'has-error': hasError(input, errors)}">
 		<label :class="{ 'flex': !folded, 'inline-flex': folded }" class="items-center text-sm font-bold text-black" :for="`i-${input}`">
 			{{ label }}
-			<span v-if="optional&&!folded" class="text-sm text-gray-500"><span class="text-gray-300">&nbsp;/&nbsp;</span>optional</span>
+			<span v-if="optional&&!folded" class="text-sm font-bold text-gray-400"><span class="text-gray-400">&nbsp;/&nbsp;</span>optional</span>
 		</label>
 		<div v-show="!folded" :class="{ 'flex': prefix||suffix }" class="mt-2">
 			<span v-if="prefix" class="text-muted px-2 py-3 bg-gray-300 border-2 border-gray-300 rounded-l">{{ prefix }}</span>
@@ -18,12 +18,10 @@
 </template>
 
 <script>
-// import hasError from '@/mixins/hasError'
 import ErrorMessage from '@/components/ErrorMessage'
 import hasError from '@/helpers/hasError'
 
 export default {
-	// mixins: [hasError],
 	components: { ErrorMessage },
 	props: {
 		input: {
