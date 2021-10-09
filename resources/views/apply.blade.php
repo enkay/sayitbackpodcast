@@ -4,7 +4,7 @@
 	<meta property="og:url" content="{{ url()->current() }}">
 	<meta property="og:title" content="Say It Back - Apply to be matched">
 	<meta property="og:description" content="Every Monday, hosts Vana & Laurent send single men and women on audio dates where they try to find love (or at least slide in someone's DMs!)">
-	<meta property="og:image" content="{{ asset('/images/say-it-back-meta-preview.png') }}">
+	<meta property="og:image" content="{{ asset('/images/say-it-back-meta-preview.png?v=2') }}">
 @endsection
 
 @section('content')
