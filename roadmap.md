@@ -1,9 +1,9 @@
 # pages
 - apply
-	- store data
 	- upload photo
 	- store photo
 	- success message
+		- if you have any questions email us
 	- terms
 	- bugsnag
 - other

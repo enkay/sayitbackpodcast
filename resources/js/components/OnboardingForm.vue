@@ -23,7 +23,7 @@
 			<FormSelect name="interested_in" v-model="form.interested_in" :options="interested_in"></FormSelect>
 		</FormGroup>
 		<FormGroup class="mt-4" label="What's your insta?" :errors="errors" input="instagram" prefix="@" optional>
-			<FormInput name="instagram" v-model="form.instagram" placeholder="champagnepapi" :prefix="true"></FormInput>
+			<FormInput name="instagram" v-model="form.instagram" placeholder="champagnepapi" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" :prefix="true"></FormInput>
 		</FormGroup>
 		<FormButton class="w-full mt-8" type="submit" :loading="loading">Submit</FormButton>
 	</form>
