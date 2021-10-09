@@ -9,8 +9,8 @@
 		<FormGroup class="mt-4" label="What's your birthday? (MM/DD/YYYY)" :class="birthdayGroupClasses" input="location">
 			<div class="flex">
 				<FormNumberInput type="number" name="birthday_month" v-model="form.birthday_month" placeholder="MM" maxlength="2"></FormNumberInput>
-				<FormNumberInput type="number" class="ml-4" name="birthday_day" v-model="form.birthday_day" placeholder="DD" maxlength="2"></FormNumberInput>
-				<FormNumberInput type="number" class="ml-4" name="birthday_year" v-model="form.birthday_year" placeholder="YYYY" maxlength="4"></FormNumberInput>
+				<FormNumberInput ref="birthday_day" type="number" class="ml-4" name="birthday_day" v-model="form.birthday_day" placeholder="DD" maxlength="2"></FormNumberInput>
+				<FormNumberInput ref="birthday_year" type="number" class="ml-4" name="birthday_year" v-model="form.birthday_year" placeholder="YYYY" maxlength="4"></FormNumberInput>
 			</div>
 		</FormGroup>
 		<FormGroup class="mt-4" label="What you do for work?" :errors="errors" input="occupation">
@@ -88,6 +88,15 @@ export default {
 				'has-error': hasError('birthday_day', this.errors),
 				'has-error': hasError('birthday_year', this.errors),
 			}
+		}
+	},
+
+	watch: {
+		'form.birthday_month' (val) {
+			if (val.length==2) this.$refs.birthday_day.$el.focus()
+		},
+		'form.birthday_day' (val) {
+			if (val.length==2) this.$refs.birthday_year.$el.focus()
 		}
 	},
 
