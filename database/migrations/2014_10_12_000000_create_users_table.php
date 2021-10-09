@@ -46,7 +46,7 @@ class CreateUsersTable extends Migration
 						$table->string('tiktok')->nullable();
 						$table->string('facebook')->nullable();
             $table->timestamp('email_verified_at')->nullable();
-						$table->boolean('admin');
+						$table->boolean('admin')->default(false);
             $table->rememberToken();
             $table->timestamps();
 						$table->softDeletes();

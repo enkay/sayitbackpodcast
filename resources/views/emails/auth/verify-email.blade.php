@@ -1,8 +1,7 @@
-@extends('emails.selfco.template')
+@extends('emails.template')
 
 @section('content')
 	<x-h1>Verify your email</x-h1>
-	<x-p>Welcome to Selfco!</x-p>
 	<x-p>Please click the button below to verify your email address.</x-p>
 @endsection
 

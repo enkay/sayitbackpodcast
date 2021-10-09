@@ -2,9 +2,22 @@
 
 @section('meta')
 	<meta property="og:url" content="{{ url()->current() }}">
-	<meta property="og:title" content="Say It Back - A reality dating podcast">
+	<meta property="og:title" content="SAY IT BACK PODCAST - A Reality Dating Show">
 	<meta property="og:description" content="Every Monday, hosts Vana & Laurent send single men and women on audio dates where they try to find love (or at least slide in someone's DMs!)">
 	<meta property="og:image" content="{{ asset('/images/say-it-back-meta-preview.png?v=2') }}">
+@endsection
+
+@section('header')
+	<header class="flex max-w-lg mx-auto">
+		<div class="mx-auto text-center">
+			<a href="/" class="text-7xl block mx-auto text-5xl font-extrabold tracking-tight uppercase">
+				Say It Back
+			</a>
+			<div class="mt-2 text-xl text-3xl font-bold text-gray-400 uppercase">
+				A reality dating podcast
+			</div>
+		</div>
+	</header>
 @endsection
 
 @section('content')

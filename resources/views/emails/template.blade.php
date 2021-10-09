@@ -789,9 +789,9 @@
 																					<a
 																						class="intro-header__logo "
 																						href="{{ config('app.url') }}"
-																						target="_blank" title="Say It Back"
-																						style="color: #999; display: block; font-weight:bold; line-height: inherit; max-width: 40px; text-decoration: underline">
-																						SAY IT BACK
+																						target="_blank"
+																						style="color: #000000; display: block; font-weight:bold; line-height: inherit; text-decoration: none;">
+																						SAY IT BACK PODCAST
 																					</a>
 																					<div class="">
 																						@yield('content')

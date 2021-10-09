@@ -1,10 +1,10 @@
 # pages
-- branding
-	- check og graph image
 - apply
-	- store email to database
-	- send verification email
 	- show message to verify email
+	- verify email
+	- login
+	- redirect
+	- requires auth routes
 	- application form
 	- email notification when new application
 	- admin section to check applications

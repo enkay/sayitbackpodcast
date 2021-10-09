@@ -23,7 +23,7 @@ class VerifyEmail extends Mailable
     public function __construct(User $user)
     {
 		$this->user = $user;
-		$base_url = config('app.url') . '/verify-email?';
+		$base_url = config('app.url') . '/verify?';
     $this->token_url = $base_url . http_build_query([
 			'email' => $user->email,
 			'token' => $user->getEmailVerificationToken(),

@@ -15,7 +15,7 @@ class Button extends Component
      *
      * @return void
      */
-    public function __construct($url, $color="#3182ce")
+    public function __construct($url, $color="#000000")
     {
 			$this->url = $url;
 			$this->color = $color;

@@ -1,8 +1,6 @@
-@extends('emails.selfco.template-text')
+@extends('emails.template-text')
 
 @section('content')
-Welcome to Selfco!
-
 Please open the URL below in your web browser to verify your email address.
 @endsection
 
