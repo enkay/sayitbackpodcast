@@ -10,6 +10,7 @@
 				<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 				<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap" rel="stylesheet">
         <link href="{{ cachebust('/css/app.css') }}" rel="stylesheet">
+				<link rel="shortcut icon" href="/images/favicon.png" type="image/png" />
 
 				<link type="application/rss+xml" rel="alternate" title="Say It Back" href="https://anchor.fm/s/6dab07d0/podcast/rss"/>
 				@yield('meta')
