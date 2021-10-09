@@ -1,6 +1,6 @@
 <template>
 	<div class="form-group" :class="{ 'has-error': hasError(input, errors)}">
-		<label :class="{ 'flex': !folded, 'inline-flex': folded }" class="items-center text-base text-gray-600" :for="`i-${input}`">
+		<label :class="{ 'flex': !folded, 'inline-flex': folded }" class="items-center text-sm font-bold text-black" :for="`i-${input}`">
 			{{ label }}
 			<span v-if="optional&&!folded" class="text-sm text-gray-500"><span class="text-gray-300">&nbsp;/&nbsp;</span>optional</span>
 		</label>

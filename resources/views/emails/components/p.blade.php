@@ -1,0 +1,1 @@
+<p style="color: #111111; font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', Helvetica, Ubuntu, Roboto, Noto, 'Segoe UI', Arial, sans-serif; font-size: 18px; font-weight: inherit; line-height: 1.6; margin: 0 0 16px; padding: 0; text-align: left" align="left">{{ $slot }}</p>

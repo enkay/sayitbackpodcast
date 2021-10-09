@@ -1,17 +1,17 @@
 # pages
+- branding
+	- check og graph image
 - apply
-	- https://bachelornation.com/pages/apply/
-	- hinge and bumble
-	- photo (headshot)
-	- answer match making questions
-	- answer fun questions
-	- why do you want to be on the show
-	- agree to the terms of service
+	- store email to database
+	- send verification email
+	- show message to verify email
+	- application form
+	- email notification when new application
+	- admin section to check applications
 - start
 	- what to expect
 	- how to prepare
 - home
 	- links to socials
-	- link to apply
 - episodes
 - guests

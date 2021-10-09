@@ -1,0 +1,1 @@
+<h1 style="color: inherit; font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', Helvetica, Ubuntu, Roboto, Noto, 'Segoe UI', Arial, sans-serif; font-size: 34px; font-weight: bold; line-height: 1.3; margin: 40px 0 32px; padding: 0; text-align: left; word-wrap: normal" align="left">{{ $slot }}</h1>

@@ -45,7 +45,7 @@ export default {
 	}
 	
 	input:focus {
-		@apply bg-gray-200 border-gray-400;
+		@apply bg-gray-100 border-black;
 	}
 
 	.has-error input {
