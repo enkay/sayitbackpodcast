@@ -10,10 +10,10 @@
 @section('header')
 	<header class="flex max-w-lg mx-auto">
 		<div class="mx-auto text-center">
-			<a href="/" class="text-7xl block mx-auto text-5xl font-extrabold tracking-tight uppercase">
+			<a href="/" class="lg:text-7xl block mx-auto text-5xl font-extrabold tracking-tight uppercase">
 				Say It Back
 			</a>
-			<div class="mt-2 text-xl text-3xl font-bold text-gray-400 uppercase">
+			<div class="lg:text-3xl mt-2 text-xl font-bold text-gray-400 uppercase">
 				A reality dating podcast
 			</div>
 		</div>
