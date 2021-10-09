@@ -64,11 +64,13 @@ export default {
 				{ code: 'mia', name: 'Miami, FL' },
 			],
 			genders: [
+				{ code: '', name: '' },
 				{ code: 'man', name: 'Man' },
 				{ code: 'woman', name: 'Woman' },
 				{ code: 'other', name: 'Other' },
 			],
 			interested_in: [
+				{ code: '', name: '' },
 				{ code: 'men', name: 'Men' },
 				{ code: 'women', name: 'Women' },
 				{ code: 'all', name: 'Everyone' },
