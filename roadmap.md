@@ -5,6 +5,7 @@
 	- store photo
 	- success message
 	- terms
+	- bugsnag
 - other
 	- email notification when new application
 	- admin section to check applications
