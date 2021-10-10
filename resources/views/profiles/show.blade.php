@@ -11,7 +11,7 @@
 	<div class="mt-8">
 		<img src="{{ $user['photo'] }}" class="w-full rounded-lg" alt="{{ $user['name'] }}">
 		<h2 class="mt-2 text-xl font-extrabold uppercase">{{ $user['name'] }}, {{ $user['age'] }}</h2>
-		<h3 class="text-gray-300">{{ $user['location'] }}</h3>
+		<h3 class="">{{ $user['location'] }}</h3>
 		<p>{{ $user['occupation'] }}</p>
 	</div>
 @endsection
