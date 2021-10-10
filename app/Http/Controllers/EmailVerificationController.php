@@ -20,6 +20,14 @@ class EmailVerificationController extends Controller
 			Auth::login($user, true);
 		}
 
-		return redirect()->route('onboard');
+		if($user->first_name && $user->photo) {
+			$route = 'onboard.thanks';
+		} else if ($user->first_name) {
+			$route = 'onboard.photo';
+		} else {
+			$route = 'onboard';
+		}
+
+		return redirect()->route($route);
 	}	
 }

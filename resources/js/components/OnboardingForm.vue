@@ -13,7 +13,7 @@
 				<FormNumberInput ref="birthday_year" type="number" class="ml-4" name="birthday_year" v-model="form.birthday_year" placeholder="YYYY" maxlength="4"></FormNumberInput>
 			</div>
 		</FormGroup>
-		<FormGroup class="mt-4" label="What you do for work?" :errors="errors" input="occupation">
+		<FormGroup class="mt-4" label="What do you do for work?" :errors="errors" input="occupation">
 			<FormInput name="occupation" v-model="form.occupation" placeholder="Aspiring Dolphin Trainer"></FormInput>
 		</FormGroup>
 		<FormGroup class="mt-4" label="What's your gender?" :errors="errors" input="gender">

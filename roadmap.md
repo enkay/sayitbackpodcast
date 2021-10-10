@@ -1,7 +1,5 @@
 # pages
 - apply
-	- upload photo
-	- store photo
 	- verify link just show verified and redirect to profile or form if not completed
 	- terms
 - other
