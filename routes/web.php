@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EmailVerificationController;
+use App\Http\Controllers\ProfilesController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'home')->name('home');
@@ -20,4 +21,7 @@ Route::view('equipment', 'equipment')->name('equipment');
 Route::middleware('auth')->group(function () {
 	Route::view('welcome', 'onboard')->name('onboard');
 	Route::view('welcome/photo', 'onboard-photo')->name('onboard.photo');
+	Route::view('welcome/thanks', 'onboard-thanks')->name('onboard.thanks');
+	Route::get('profiles/me', [ProfilesController::class, 'me'])->name('profiles.show.me');
+	Route::get('profiles/{uuid}', [ProfilesController::class, 'show'])->name('profiles.show');
 });

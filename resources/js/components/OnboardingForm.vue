@@ -1,7 +1,7 @@
 <template>
 	<form @submit.prevent="submit">
 		<FormGroup label="What's your first name?" :errors="errors" input="first_name">
-			<FormInput name="first_name" v-model="form.first_name" placeholder="Sam"></FormInput>
+			<FormInput name="first_name" v-model="form.first_name" placeholder="Andy"></FormInput>
 		</FormGroup>
 		<FormGroup class="mt-4" label="Where are you from?" :errors="errors" input="location">
 			<FormSelect name="location" v-model="form.location" :options="cities"></FormSelect>
@@ -32,7 +32,6 @@
 <script>
 import FormGroup from '@/components/FormGroup'
 import FormInput from '@/components/FormInput'
-import FileUpload from '@/components/FileUpload'
 import FormSelect from '@/components/FormSelect'
 import FormNumberInput from '@/components/FormNumberInput'
 import FormButton from '@/components/FormButton'
@@ -41,7 +40,7 @@ import hasError from '@/helpers/hasError'
 export default {
 	components: {
 		FormGroup, FormInput, FormButton,
-		FileUpload,  FormSelect, FormNumberInput,
+		FormSelect, FormNumberInput,
 		
 	},
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ApplicationRequest;
 use App\Http\Requests\OnboardUserRequest;
+use App\Http\Requests\UploadPhotoRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,8 +18,12 @@ class ApplicationsController extends Controller
 		$user = User::create([
 			'email' => $request->email,
 		]);
+		
+		Auth::login($user, true);
 
 		$user->sendEmailVerificationEmail();
+		
+		return response()->json('created');
 	}
 
 	# onboard
@@ -39,6 +44,14 @@ class ApplicationsController extends Controller
 		]);
 
 		return response()->json('submitted');
+	}
+
+	# upload photo
+	public function upload_photo(UploadPhotoRequest $request)
+	{
+		$user = Auth::user();
+		$user->updatePhoto($request->file('photo'));
+		return response()->json('uploaded');
 	}
 
 	protected function getLocation($code, $value)

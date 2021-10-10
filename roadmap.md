@@ -5,7 +5,7 @@
 	- success message
 		- if you have any questions email us
 	- terms
-	- bugsnag
+	- verify link just show verified and redirect to profile or form if not completed
 - other
 	- email notification when new application
 	- admin section to check applications

@@ -9,7 +9,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 use Laravel\Sanctum\HasApiTokens;
+use Intervention\Image\Facades\Image;
+use Illuminate\Support\Str;
 
 class User extends Authenticatable
 {
@@ -20,6 +23,16 @@ class User extends Authenticatable
 	protected $casts = [
 			'email_verified_at' => 'datetime',
 	];
+
+	// getters
+	public function getPhotoUrlAttribute()
+	{
+		return $this->photo ? Storage::url($this->photo) : null;
+	}
+	public function getOriginalPhotoUrlAttribute($value)
+	{
+		return $this->original_photo ? Storage::url($this->original_photo) : null;
+	}
 
 	// methods
 	public function getEmailVerificationToken()
@@ -35,5 +48,38 @@ class User extends Authenticatable
 	public function hasEmailVerified()
 	{
 		return $this->email_verified_at ? true : false;
+	}
+
+	public function updatePhoto($file)
+	{
+		$this->deletePhoto();
+		$folder = $this->uuid;
+
+		// store original
+		$this->original_photo = $file->store($folder);
+
+		// resize
+		$image = Image::make($file);
+		$image->fit(1080, 1080, function ($constraint) {
+			$constraint->upsize();
+		})->encode('png')->stream();
+		$path = $folder . '/' . Str::orderedUuid() . '.png';
+		Storage::put($path, $image, 'public');
+		$this->photo = $path;
+
+		$this->save();
+	}
+	
+	public function deletePhoto()
+	{
+		Storage::delete([
+			$this->photo,
+			$this->original_photo,
+		]);
+
+		$this->update([
+			'photo' => null,
+			'original_photo' => null,
+		]);
 	}
 }

@@ -14,7 +14,7 @@ export default {
 	props: ['inputName', 'inputAccept', 'loading', 'reset', 'button-text'],
 	data () {
 		return {
-			filename: 'No file selected',
+			filename: 'No photo selected',
 			file: null,
 		}
 	},
@@ -24,7 +24,7 @@ export default {
 			this.$emit('input', file)
 			this.file = file
 			let filename = e.target.value.replace(/\\/g, '/').replace(/.*\//, '');
-			this.filename = filename.length ? filename : 'No file selected'
+			this.filename = filename.length ? filename : 'No photo selected'
 		}
 	}
 }

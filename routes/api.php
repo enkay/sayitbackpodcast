@@ -8,4 +8,5 @@ Route::post('apply', [ApplicationsController::class, 'apply']);
 // app
 Route::middleware('auth:sanctum')->group(function () {
 	Route::post('onboard', [ApplicationsController::class, 'onboard']);
+	Route::post('onboard/photo', [ApplicationsController::class, 'upload_photo']);
 });
