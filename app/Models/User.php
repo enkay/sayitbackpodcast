@@ -6,6 +6,7 @@ use App\Mail\VerifyEmail;
 use App\Traits\HasUuid;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Mail;
@@ -16,12 +17,13 @@ use Illuminate\Support\Str;
 
 class User extends Authenticatable
 {
-	use HasApiTokens, HasUuid, HasFactory, Notifiable;
+	use HasApiTokens, HasUuid, HasFactory, SoftDeletes, Notifiable;
 
 	protected $guarded = [];
 
 	protected $casts = [
 			'email_verified_at' => 'datetime',
+			'birthday' => 'date',
 	];
 
 	// getters
@@ -32,6 +34,14 @@ class User extends Authenticatable
 	public function getOriginalPhotoUrlAttribute($value)
 	{
 		return $this->original_photo ? Storage::url($this->original_photo) : null;
+	}
+	public function getAgeAttribute()
+	{
+		return $this->birthday->age;
+	}
+	public function getProfileUrlAttribute()
+	{
+		return route('profiles.show', $this->uuid, true);
 	}
 
 	// methods
@@ -81,5 +91,10 @@ class User extends Authenticatable
 			'photo' => null,
 			'original_photo' => null,
 		]);
+	}
+
+	public function isAdmin()
+	{
+		return $this->admin ? true : false;
 	}
 }

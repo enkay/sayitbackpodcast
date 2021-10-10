@@ -3,15 +3,15 @@
 		<FormGroup label="What's your first name?" :errors="errors" input="first_name">
 			<FormInput name="first_name" v-model="form.first_name" placeholder="Andy"></FormInput>
 		</FormGroup>
-		<FormGroup class="mt-4" label="Where are you from?" :errors="errors" input="location">
-			<FormSelect name="location" v-model="form.location" :options="cities"></FormSelect>
-		</FormGroup>
 		<FormGroup class="mt-4" label="What's your birthday? (MM/DD/YYYY)" :class="birthdayGroupClasses" input="location">
 			<div class="flex">
 				<FormNumberInput type="number" name="birthday_month" v-model="form.birthday_month" placeholder="MM" maxlength="2"></FormNumberInput>
 				<FormNumberInput ref="birthday_day" type="number" class="ml-4" name="birthday_day" v-model="form.birthday_day" placeholder="DD" maxlength="2"></FormNumberInput>
 				<FormNumberInput ref="birthday_year" type="number" class="ml-4" name="birthday_year" v-model="form.birthday_year" placeholder="YYYY" maxlength="4"></FormNumberInput>
 			</div>
+		</FormGroup>
+		<FormGroup class="mt-4" label="Where are you from?" :errors="errors" input="location">
+			<FormSelect name="location" v-model="form.location" :options="cities"></FormSelect>
 		</FormGroup>
 		<FormGroup class="mt-4" label="What do you do for work?" :errors="errors" input="occupation">
 			<FormInput name="occupation" v-model="form.occupation" placeholder="Aspiring Dolphin Trainer"></FormInput>

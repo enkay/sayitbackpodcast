@@ -1,6 +1,7 @@
 # pages
+- automatic db backups
+- store location instead of city, state, country
 - apply
-	- verify link just show verified and redirect to profile or form if not completed
 	- terms
 - other
 	- email notification when new application
