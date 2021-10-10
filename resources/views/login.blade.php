@@ -2,7 +2,8 @@
 
 @section('content')
 	<div class="mt-12">
-		<h2 class="mt-6 text-xl font-extrabold uppercase">Login</h2>
+		<h2 class="mt-6 text-xl font-extrabold uppercase">Sign In</h2>
+		<p class="mt-2">Come here often?</p>
 		
 		@if($errors->any())
 			<div class="mt-2 text-red-700">
@@ -10,6 +11,6 @@
 			</div>
 		@endif
 
-		<p class="mt-2">This page isn't ready yet, check back later!</p>
+		<login-form class="mt-8"></login-form>
 	</div>
 @endsection

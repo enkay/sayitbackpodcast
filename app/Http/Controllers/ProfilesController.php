@@ -8,13 +8,6 @@ use Illuminate\Support\Facades\Auth;
 
 class ProfilesController extends Controller
 {
-	# me
-	public function me()
-	{
-		$user = Auth::user();
-		return view('profiles.show', compact('user'));
-	}
-
 	# show
 	public function show(Request $request, $uuid)
 	{

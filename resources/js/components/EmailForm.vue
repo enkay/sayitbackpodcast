@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<form @submit.prevent="submit">
-			<FormGroup class="mt-4" label="What's your email?" :errors="errors" input="email">
+			<FormGroup class="" label="What's your email?" :errors="errors" input="email">
 				<FormInput name="email" v-model="form.email" type="email" placeholder="yourname@gmail.com"></FormInput>
 			</FormGroup>
 			<FormButton type="submit" :loading="loading" class="w-full mt-4">Get Started!</FormButton>
@@ -13,16 +13,19 @@
 <script>
 import FormGroup from '@/components/FormGroup'
 import FormInput from '@/components/FormInput'
+import FormSelect from '@/components/FormSelect'
 import FormButton from '@/components/FormButton'
 
 export default {
 	components: {
 		FormGroup, FormInput, FormButton,
+		FormSelect, 
 	},
 
 	data () {
 		return {
 			form: {
+				location: 'nyc',
 				email: '',
 			},
 			cities: [

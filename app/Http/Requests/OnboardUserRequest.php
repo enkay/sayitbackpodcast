@@ -25,7 +25,7 @@ class OnboardUserRequest extends FormRequest
     {
         return [
 					'first_name' => ['required', 'string', 'max:255'],
-					'location' => ['required', 'string', 'in:nyc,la,mia'],
+					'location' => ['required', 'string', 'in:nyc,la,mia,other'],
 					'birthday_month' => ['required', 'numeric', 'min:1', 'max:12'],
 					'birthday_day' => ['required', 'numeric', 'min:1', 'max:31'],
 					'birthday_year' => ['required', 'numeric', 'min:1000', 'max:9999'],

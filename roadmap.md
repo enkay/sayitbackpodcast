@@ -5,10 +5,8 @@
 - apply
 	- terms
 - other
-	- email notification when new application
-	- admin section to check applications
 	- page titles
-	- logout
+	- login / logout
 - start
 	- what to expect
 	- how to prepare

@@ -37,7 +37,7 @@ class User extends Authenticatable
 	}
 	public function getAgeAttribute()
 	{
-		return $this->birthday->age;
+		return $this->birthday ? $this->birthday->age : null;
 	}
 	public function getProfileUrlAttribute()
 	{

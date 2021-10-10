@@ -12,6 +12,7 @@
 		</FormGroup>
 		<FormGroup class="mt-4" label="Where are you from?" :errors="errors" input="location">
 			<FormSelect name="location" v-model="form.location" :options="cities"></FormSelect>
+			<div class="mt-1 text-xs">We're only available in a few select cities for now</div>
 		</FormGroup>
 		<FormGroup class="mt-4" label="What do you do for work?" :errors="errors" input="occupation">
 			<FormInput name="occupation" v-model="form.occupation" placeholder="Aspiring Dolphin Trainer"></FormInput>
@@ -61,6 +62,7 @@ export default {
 				{ code: 'nyc', name: 'New York, NY' },
 				{ code: 'la', name: 'Los Angeles, CA' },
 				{ code: 'mia', name: 'Miami, FL' },
+				{ code: 'other', name: 'Other' },
 			],
 			genders: [
 				{ code: '', name: '' },

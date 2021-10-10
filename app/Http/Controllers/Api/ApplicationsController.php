@@ -33,10 +33,11 @@ class ApplicationsController extends Controller
 
 		$user->update([
 			'first_name' => $request->first_name,
-			'city' => $this->getLocation($request->location, 'city'),
-			'state' => $this->getLocation($request->location, 'state'),
-			'country' => $this->getLocation($request->location, 'country'),
 			'birthday' => $request->birthday_year . '-' . $request->birthday_month . '-' . $request->birthday_day,
+			'location' => $request->location,
+			'city' => config('cities' . $request->location . '.city'),
+			'state' => config('cities' . $request->location . '.state'),
+			'country' => config('cities' . $request->location . '.country'),
 			'occupation' => $request->occupation,
 			'gender' => $request->gender,
 			'interested_in' => $request->interested_in,
@@ -52,28 +53,5 @@ class ApplicationsController extends Controller
 		$user = Auth::user();
 		$user->updatePhoto($request->file('photo'));
 		return response()->json('uploaded');
-	}
-
-	protected function getLocation($code, $value)
-	{
-		$locations = [
-			'nyc' => [
-				'city' => 'New York',
-				'state' => 'NY',
-				'country' => 'USA'
-			],
-			'la' => [
-				'city' => 'Los Angeles',
-				'state' => 'CA',
-				'country' => 'USA'
-			],
-			'mia' => [
-				'city' => 'Miami',
-				'state' => 'FL',
-				'country' => 'USA'
-			],
-		];
-
-		return $locations[$code][$value];
 	}
 }

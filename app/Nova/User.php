@@ -59,11 +59,11 @@ class User extends Resource
                 ->rules('max:255'),
 								
 						Text::make('Age', function () {
-							return $this->age . ' years old';
+							return $this->age;
 						}),
 
 						Text::make('Location', function () {
-							return $this->city . ', ' . $this->state . ', ' . $this->country;
+							return config('cities.' . $this->location . '.name');
 						}),
 						
             Text::make('Occupation')
