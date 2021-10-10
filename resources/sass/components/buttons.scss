@@ -66,10 +66,10 @@
 }
 
 .btn-outline {
-	@apply bg-transparent border-gray-400 text-gray-900 shadow-none;
+	@apply bg-transparent border-black text-black shadow-none;
 
 	&:hover {
-		@apply bg-transparent border-gray-500 text-gray-900;
+		@apply bg-transparent border-black text-black;
 	}
 
 	&:disabled {
