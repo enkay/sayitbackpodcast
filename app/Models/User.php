@@ -66,7 +66,7 @@ class User extends Authenticatable
 		$folder = $this->uuid;
 
 		// store original
-		$this->original_photo = $file->store($folder);
+		$this->original_photo = $file->storePublicly($folder);
 
 		// resize
 		$image = Image::make($file);

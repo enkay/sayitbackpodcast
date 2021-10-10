@@ -1,6 +1,7 @@
 # pages
 - automatic db backups
 - store location instead of city, state, country
+- encode images as jpg
 - apply
 	- terms
 - other
