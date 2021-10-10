@@ -3,8 +3,8 @@
 @section('meta')
 	<meta property="og:url" content="{{ url()->current() }}">
 	<meta property="og:title" content="{{ $user['name'] }} - Say It Back">
-	{{-- <meta property="og:description" content="Every week, hosts Vana & Laurent send single men and women on phone dates where they try to find love (or at least slide in the DMs)"> --}}
-	{{-- <meta property="og:image" content="{{ asset('/images/say-it-back-meta-preview.png?v=2') }}"> --}}
+	<meta property="og:description" content="{{ $user['name'] }}, {{ $user['age'] }} from {{ $user['location'] }}">
+	<meta property="og:image" content="{{ $user['photo'] }}">
 @endsection
 
 @section('content')
