@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use App\Nova\Filters\UserGender;
 use App\Nova\Filters\UserInterestedIn;
+use App\Nova\Filters\UserLocation;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\ID;
@@ -126,6 +127,7 @@ class User extends Resource
         return [
 					new UserGender,
 					new UserInterestedIn,
+					new UserLocation,
 				];
     }
 
