@@ -4,6 +4,7 @@
 	<form class="mt-8" @submit.prevent="submit">
 		<FormGroup :errors="errors" input="photo">
 			<FileUpload @change="handleFileUpload" button-text="Choose a Photo" input-name="photo" input-accept=".jpg,.jpeg,.png,.heif" :reset="fileUploadKey"></FileUpload>
+			<div class="mt-2 text-xs">Square photos work best</div>
 		</FormGroup>
 		<FormButton type="submit" :loading="loading" class="w-full mt-8">Upload Photo</FormButton>
 	</form>
