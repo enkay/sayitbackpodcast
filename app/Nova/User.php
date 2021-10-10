@@ -9,6 +9,7 @@ use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Password;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\Image;
 
 class User extends Resource
@@ -49,7 +50,9 @@ class User extends Resource
 						// 	->sortable()
 						// 	->hideFromIndex(),
 
-						Image::make('Photo')->maxWidth(270),
+						Avatar::make('Photo')->maxWidth(270)->disk(config('filesystems.default'))->onlyOnIndex(),
+
+						Image::make('Photo')->maxWidth(270)->disk(config('filesystems.default'))->hideFromIndex(),
 
             Text::make('First Name')
                 ->sortable()
