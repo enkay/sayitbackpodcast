@@ -2,6 +2,7 @@
 - automatic db backups
 - encode images as jpg
 - apply
+	- once approved can't edit themselves
 	- terms
 - other
 	- page titles

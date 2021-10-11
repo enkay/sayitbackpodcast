@@ -90,8 +90,8 @@ class User extends Resource
                 ->creationRules('unique:users,email')
                 ->updateRules('unique:users,email,{{resourceId}}'),
 
-						Text::make('Public Profile', function () {
-							return '<a href="' . $this->profile_url . '" target="_blank">View</a>';
+						Text::make('Profile', function () {
+							return '<a href="' . $this->profile_url . '" target="_blank">Profile</a>';
 						})->asHtml(),
 
 

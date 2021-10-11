@@ -11,10 +11,11 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "intervention/image": "^2.7",
         "laravel/framework": "^8.54",
-				"laravel/nova": "*",
+        "laravel/nova": "*",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "league/flysystem-aws-s3-v3": "^1.0",
+        "spatie/laravel-backup": "^7.7",
         "wildbit/swiftmailer-postmark": "^3.3"
     },
     "require-dev": {
