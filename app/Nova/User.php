@@ -12,6 +12,7 @@ use Laravel\Nova\Fields\Password;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\Image;
+use Laravel\Nova\Fields\DateTime;
 
 class User extends Resource
 {
@@ -95,13 +96,11 @@ class User extends Resource
 
 
 						Text::make('Original Photo', function () {
-							return '<a href="' . $this->original_photo_url . '" target="_blank">Original Photo</a>';
+							return $this->original_photo ? '<a href="' . $this->original_photo_url . '" target="_blank">Original Photo</a>' : null;
 						})->asHtml()->hideFromIndex(),
 
-            Password::make('Password')
-                ->onlyOnForms()
-                ->creationRules('required', 'string', 'min:8')
-                ->updateRules('nullable', 'string', 'min:8'),
+						DateTime::make('Created At')
+										->sortable(),
         ];
     }
 
