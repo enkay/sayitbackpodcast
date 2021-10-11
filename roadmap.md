@@ -1,6 +1,11 @@
 # pages
 - tests
 	- phpunit
+		- image upload
+		- verification email
+		- login
+		- logout
+		- profiles show
 	- dusk
 - encode images as jpg
 - apply

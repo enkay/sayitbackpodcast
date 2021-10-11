@@ -11,8 +11,10 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Password;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Avatar;
+use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\DateTime;
+use Laravel\Nova\Fields\Select;
 
 class User extends Resource
 {
@@ -48,60 +50,85 @@ class User extends Resource
     public function fields(Request $request)
     {
         return [
-            // ID::make()
-						// 	->sortable()
-						// 	->hideFromIndex(),
+					// photo
+					Avatar::make('Photo')
+								->maxWidth(270)
+								->disk(config('filesystems.default'))
+								->onlyOnIndex(),
+					Image::make('Photo')
+							 ->maxWidth(270)
+							 ->disk(config('filesystems.default'))
+							 ->hideFromIndex()
+							 ->hideWhenCreating()
+							 ->hideWhenUpdating(),
 
-						Avatar::make('Photo')->maxWidth(270)->disk(config('filesystems.default'))->onlyOnIndex(),
+					// first name
+					Text::make('First Name')
+							->sortable()
+							->rules('max:255'),
+					
+					// birthday
+					Text::make('Age', function () {
+						return $this->age;
+					}),
+					Date::make('Birthday')
+							->onlyOnForms(),
 
-						Image::make('Photo')->maxWidth(270)->disk(config('filesystems.default'))->hideFromIndex(),
+					// location
+					Text::make('Location', function () {
+						return config('cities.' . $this->location . '.name');
+					}),
+					Select::make('Location')
+								->options($this->locationOptions())
+								->onlyOnForms(),
+					
+					// occupation
+					Text::make('Occupation')
+							->rules('max:255'),
 
-            Text::make('First Name')
-                ->sortable()
-                ->rules('max:255'),
-								
-						Text::make('Age', function () {
-							return $this->age;
-						}),
+					// gender
+					Select::make('Gender')
+						->hideFromIndex()
+						->options([
+							'man' => 'Man',
+							'woman' => 'Woman',
+						]),
+					
+					// interested in
+					Select::make('Interested In')
+						->hideFromIndex()
+						->options([
+							'men' => 'Men',
+							'women' => 'Women'
+						]),
+					
+					// Instagram
+					Text::make('Instagram', function () {
+						return '<a href="https://instagram.com/' . $this->instagram . '" target="_blank">@' . $this->instagram . '</a>';
+					})->asHtml()->hideFromIndex(),
+					Text::make('Instagram')
+							->onlyOnForms(),
 
-						Text::make('Location', function () {
-							return config('cities.' . $this->location . '.name');
-						}),
-						
-            Text::make('Occupation')
-                ->rules('max:255'),
+					// email
+					Text::make('Email')
+							->sortable()
+							->hideFromIndex()
+							->rules('required', 'email', 'max:254')
+							->creationRules('unique:users,email')
+							->updateRules('unique:users,email,{{resourceId}}'),
 
-						Text::make('Gender')
-              ->rules('max:255')
-							->hideFromIndex(),
-
-						Text::make('Interested In')
-              ->rules('max:255')
-							->hideFromIndex(),
-
-						Text::make('Instagram', function () {
-							return '<a href="https://instagram.com/' . $this->instagram . '" target="_blank">@' . $this->instagram . '</a>';
-						})->asHtml()->hideFromIndex(),
-
-            Text::make('Email')
-                ->sortable()
-								->hideFromIndex()
-                ->rules('required', 'email', 'max:254')
-                ->creationRules('unique:users,email')
-                ->updateRules('unique:users,email,{{resourceId}}'),
-
-						Text::make('Profile', function () {
-							return '<a href="' . $this->profile_url . '" target="_blank">Profile</a>';
-						})->asHtml(),
+					Text::make('Profile', function () {
+						return '<a href="' . $this->profile_url . '" target="_blank">Profile</a>';
+					})->asHtml(),
 
 
-						Text::make('Original Photo', function () {
-							return $this->original_photo ? '<a href="' . $this->original_photo_url . '" target="_blank">Original Photo</a>' : null;
-						})->asHtml()->hideFromIndex(),
+					Text::make('Original Photo', function () {
+						return $this->original_photo ? '<a href="' . $this->original_photo_url . '" target="_blank">Original Photo</a>' : null;
+					})->asHtml()->hideFromIndex(),
 
-						DateTime::make('Created At')
-										->sortable(),
-        ];
+					DateTime::make('Created At')
+									->hideFromIndex(),
+			];
     }
 
     /**
@@ -151,4 +178,14 @@ class User extends Resource
     {
         return [];
     }
+
+		public function locationOptions()
+		{
+			$cities = [];
+			foreach(config('cities') as $key => $info)
+			{
+				$cities[$key] = $info['name']; 
+			}
+			return $cities;
+		}
 }
