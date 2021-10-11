@@ -107,7 +107,9 @@ class User extends Resource
 					
 					// Instagram
 					Text::make('Instagram', function () {
-						return '<a href="https://instagram.com/' . $this->instagram . '" target="_blank">@' . $this->instagram . '</a>';
+						return $this->instagram
+							? '<a href="https://instagram.com/' . $this->instagram . '" target="_blank">@' . $this->instagram . '</a>'
+							: null;
 					})->asHtml()->hideFromIndex(),
 					Text::make('Instagram')
 							->onlyOnForms(),
