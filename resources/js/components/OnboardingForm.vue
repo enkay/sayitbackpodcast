@@ -49,10 +49,10 @@ export default {
 		return {
 			form: {
 				first_name: '',
-				location: 'nyc',
 				birthday_month: '',
 				birthday_day: '',
 				birthday_year: '',
+				location: 'nyc',
 				occupation: '',
 				gender: '',
 				interested_in: '',

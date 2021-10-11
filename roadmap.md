@@ -1,5 +1,7 @@
 # pages
-- automatic db backups
+- tests
+	- phpunit
+	- dusk
 - encode images as jpg
 - apply
 	- once approved can't edit themselves
