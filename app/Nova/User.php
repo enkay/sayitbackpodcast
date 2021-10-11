@@ -127,7 +127,8 @@ class User extends Resource
 					})->asHtml()->hideFromIndex(),
 
 					DateTime::make('Created At')
-									->hideFromIndex(),
+									->hideFromIndex()
+									->onlyOnDetail(),
 			];
     }
 
