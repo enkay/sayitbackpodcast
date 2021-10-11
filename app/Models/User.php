@@ -60,37 +60,26 @@ class User extends Authenticatable
 		return $this->email_verified_at ? true : false;
 	}
 
-	public function updatePhoto($file)
+	public function uploadOriginalPhoto($file)
 	{
-		$this->deletePhoto();
-		$folder = $this->uuid;
+		$path = $file->storePublicly($this->uuid);
+		Storage::delete($this->original_photo);
+		return $path;
+	}
 
-		// store original
-		$this->original_photo = $file->storePublicly($folder);
-
-		// resize
+	public function uploadPhoto($file)
+	{
 		$image = Image::make($file);
 		$image->fit(1080, 1080, function ($constraint) {
 			$constraint->upsize();
-		})->encode('png')->stream();
-		$path = $folder . '/' . Str::orderedUuid() . '.png';
+		})->encode('jpg')->stream();
+
+		$path = $this->uuid . '/' . Str::orderedUuid() . '.jpg';
+		
 		Storage::put($path, $image, 'public');
-		$this->photo = $path;
+		Storage::delete($this->photo);
 
-		$this->save();
-	}
-	
-	public function deletePhoto()
-	{
-		Storage::delete([
-			$this->photo,
-			$this->original_photo,
-		]);
-
-		$this->update([
-			'photo' => null,
-			'original_photo' => null,
-		]);
+		return $path;
 	}
 
 	public function isAdmin()

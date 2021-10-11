@@ -51,7 +51,12 @@ class ApplicationsController extends Controller
 	public function upload_photo(UploadPhotoRequest $request)
 	{
 		$user = Auth::user();
-		$user->updatePhoto($request->file('photo'));
+		
+		$user->update([
+			'original_photo' => $user->uploadOriginalPhoto($request->file('photo')),
+			'photo' => $user->uploadPhoto($request->file('photo'))
+		]);
+
 		return response()->json('uploaded');
 	}
 }

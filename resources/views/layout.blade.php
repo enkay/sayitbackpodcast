@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
-				<title>SAY IT BACK PODCAST - A Reality Dating Show</title>
+				<title>SAY IT BACK PODCAST</title>
 
 				<link rel="preconnect" href="https://fonts.googleapis.com">
 				<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,6 +15,7 @@
 				<link type="application/rss+xml" rel="alternate" title="Say It Back" href="https://anchor.fm/s/6dab07d0/podcast/rss"/>
 				
 				@section('meta')
+					<meta name="description" content="A Reality Dating Show. Every week, hosts Vana & Laurent send single men and women on phone dates to try and find love (or at least slide in the DMs)">
 					<meta property="og:url" content="{{ url()->current() }}">
 					<meta property="og:title" content="SAY IT BACK PODCAST">
 					<meta property="og:description" content="A Reality Dating Show. Every week, hosts Vana & Laurent send single men and women on phone dates to try and find love (or at least slide in the DMs)">

@@ -59,8 +59,11 @@ class User extends Resource
 							 ->maxWidth(270)
 							 ->disk(config('filesystems.default'))
 							 ->hideFromIndex()
-							 ->hideWhenCreating()
-							 ->hideWhenUpdating(),
+							 ->store(function (Request $request, $model) {
+								 return [
+									 'photo' => $model->uploadPhoto($request->file('photo'))
+								 ];
+							 }),
 
 					// first name
 					Text::make('First Name')
