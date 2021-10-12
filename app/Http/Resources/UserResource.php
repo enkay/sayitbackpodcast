@@ -14,13 +14,18 @@ class UserResource extends JsonResource
      */
     public function toArray($request)
     {
-        return [
-					'id' => $this->uuid,
-					'photo' => $this->photo_url,
-					'name' => ucfirst($this->first_name),
-					'age' => $this->age,
-					'location' => config('cities.' . $this->location . '.name'),
-					'occupation' => ucfirst($this->occupation),
-				];
+			$location = ($this->location !== 'other')
+				? $this->full_location
+				: null;
+
+			return [
+				'id' => $this->uuid,
+				'photo' => $this->photo_url,
+				'name' => $this->first_name ? ucfirst($this->first_name) : null,
+				'age' => $this->birthday ? $this->age : null,
+				'location' => $location,
+				'occupation' => $this->occupation ? ucfirst($this->occupation) : null,
+				'bio' => $this->bio,
+			];
     }
 }

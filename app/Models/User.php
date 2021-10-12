@@ -39,6 +39,19 @@ class User extends Authenticatable
 	{
 		return $this->birthday ? $this->birthday->age : null;
 	}
+	public function getFullLocationAttribute()
+	{
+		return config('cities.' . $this->location . '.name');
+	}
+	public function getBioAttribute($value)
+	{
+		if ($value) return $value;
+
+		if ($this->first_name) $value .= $this->first_name;
+		if ($this->birthday) $value .= ', ' . $this->age;
+		if ($this->location && $this->location !== 'other') $value .= ' from ' . $this->full_location;
+		return $value;
+	}
 	public function getProfileUrlAttribute()
 	{
 		return route('profiles.show', $this->uuid, true);
