@@ -5,6 +5,8 @@ namespace Tests\Feature;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
 
 class ApplyTest extends TestCase
@@ -61,5 +63,23 @@ class ApplyTest extends TestCase
 			'interested_in' => $form['interested_in'],
 			'instagram' => $form['instagram'] ?: null,
 		]);
+	}
+
+	// upload photo
+	public function test_users_can_upload_a_photo_when_applying()
+	{
+		$user = $this->signIn();
+
+		$form = [
+			'photo' => UploadedFile::fake()->image('avatar.jpg')
+		];
+
+		$response = $this->post('/api/onboard/photo', $form);
+
+		$response->assertSuccessful();
+		$this->assertNotNull($user->photo);
+		$this->assertNotNull($user->original_photo);
+		Storage::assertExists($user->photo);
+		Storage::assertExists($user->original_photo);
 	}
 }
