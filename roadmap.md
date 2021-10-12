@@ -7,13 +7,12 @@
 		- logout
 		- profiles show
 	- dusk
-- encode images as jpg
 - apply
 	- once approved can't edit themselves
 	- terms
+- likes and matches
 - other
 	- page titles
-	- login / logout
 - start
 	- what to expect
 	- how to prepare
