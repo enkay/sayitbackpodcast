@@ -34,7 +34,7 @@
 <div class="mt-12">
 	<img src="/images/vana-laurent.jpg" class="max-w-full rounded-lg" alt="Vana and Laurent" height="345">
 	<p class="lg:max-w-lg lg:text-xl max-w-full mt-6 text-lg text-left">
-		Every week, hosts <a href="https://www.instagram.com/vana_cristina/" target="_blank" class="underline">Vana</a> & <a href="https://www.instagram.com/itslaurentbtw/" target="_blank" class="underline">Laurent</a> send single men and women on phone dates to try and find love (or at least slide in each other's the DMs)
+		Every week, hosts <a href="https://www.instagram.com/vana_cristina/" target="_blank" class="underline">Vana</a> & <a href="https://www.instagram.com/itslaurentbtw/" target="_blank" class="underline">Laurent</a> send single men and women on phone dates to try and find love (or at least slide in each other's DMs)
 	</p>
 </div>
 <div class="mt-12">
