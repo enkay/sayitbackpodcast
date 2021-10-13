@@ -29,7 +29,7 @@
 	</a>
 </div>
 <div class="mt-4">
-	<a href="/apply" class="hover:bg-gray-800 hover:border-gray-800 block p-3 font-bold text-center text-white uppercase bg-black border-2 border-black rounded-lg">Apply To Be Matched</a>
+	<a href="{{ route('apply') }}" class="hover:bg-gray-800 hover:border-gray-800 block p-3 font-bold text-center text-white uppercase bg-black border-2 border-black rounded-lg">Apply To Be Matched</a>
 </div>
 <div class="mt-12">
 	<img src="/images/vana-laurent.jpg" class="max-w-full rounded-lg" alt="Vana and Laurent" height="345">

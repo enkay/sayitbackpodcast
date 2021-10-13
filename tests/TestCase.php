@@ -11,7 +11,7 @@ abstract class TestCase extends BaseTestCase
 {
 	use CreatesApplication, WithFaker;
 
-	protected function signIn($user = null, $attributes = null)
+	protected function signIn($attributes = null, $user = null)
 	{
 		$attributes = $attributes ?: ['email' => $this->faker()->safeEmail()];
 		$user = $user ?: User::create($attributes);

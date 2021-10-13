@@ -1,7 +1,6 @@
 # pages
 - tests
 	- phpunit
-		- image upload
 		- verification email
 		- login
 		- logout
