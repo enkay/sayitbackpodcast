@@ -36,3 +36,8 @@ Route::middleware('auth')->group(function () {
 // nova auth
 Route::redirect('admin/login', '/login')->name('nova.logout');
 Route::redirect('admin/logout', '/logout')->name('nova.logout');
+
+// affiliates
+Route::get('a/{name}', function($name) {
+	return redirect()->route('apply', ['r' => urlencode($name)]);
+});
