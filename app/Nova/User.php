@@ -15,6 +15,7 @@ use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Select;
+use Laravel\Nova\Fields\Textarea;
 
 class User extends Resource
 {
@@ -130,6 +131,9 @@ class User extends Resource
 					Text::make('Original Photo', function () {
 						return $this->original_photo ? '<a href="' . $this->original_photo_url . '" target="_blank">Original Photo</a>' : null;
 					})->asHtml()->hideFromIndex(),
+
+					Textarea::make('Notes')
+						->hideFromIndex();
 
 					DateTime::make('Created At')
 									->hideFromIndex()
