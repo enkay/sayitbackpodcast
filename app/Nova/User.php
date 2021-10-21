@@ -133,7 +133,8 @@ class User extends Resource
 					})->asHtml()->hideFromIndex(),
 
 					Textarea::make('Notes')
-						->hideFromIndex(),
+						->hideFromIndex()
+						->alwaysShow(),
 
 					DateTime::make('Created At')
 									->hideFromIndex()
